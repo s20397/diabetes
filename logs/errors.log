@@ -1,0 +1,7 @@
+2022-11-13 18:29:11,959 - kedro.pipeline.node - ERROR - Node 'splitData([preprocessed_diabetes]) -> [splitted_data]' failed with error: 
+name 'train_test_split' is not defined
+2022-11-13 18:55:35,359 - kedro.pipeline.node - ERROR - Node 'evaluateModel([model,X_test_normalized,y_test]) -> None' failed with error: 
+This LogisticRegression instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2022-11-13 18:56:26,680 - kedro.pipeline.node - ERROR - Node 'evaluateModel([trainedModel,X_test_normalized,y_test]) -> None' failed with error: 
+Failed to save outputs of node evaluateModel([trainedModel,X_test_normalized,y_test]) -> None.
+The node definition contains a list of outputs [], whereas the node function returned a 'NoneType'.

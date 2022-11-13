@@ -2,9 +2,17 @@
 This is a boilerplate pipeline 'data_processing_diabetes'
 generated using Kedro 0.18.3
 """
-import pandas as pd
+import numpy as np 
+import pandas as pd 
+import seaborn as sns
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+from sklearn.preprocessing import StandardScaler
 
-def preprocess_diabetes(diabetes: pd.DataFrame) -> pd.DataFrame:
+def preprocess_diabetes(diabetes: pd.DataFrame):
     diabetes['Glucose'] = diabetes['Glucose'].replace(0,diabetes['Glucose'].mean())
     diabetes['BloodPressure'] = diabetes['BloodPressure'].replace(0,diabetes['BloodPressure'].mean())
     diabetes['SkinThickness'] = diabetes['SkinThickness'].replace(0,diabetes['SkinThickness'].mean())
@@ -12,7 +20,7 @@ def preprocess_diabetes(diabetes: pd.DataFrame) -> pd.DataFrame:
     diabetes['BMI'] = diabetes['BMI'].replace(0,diabetes['BMI'].mean())
     return diabetes
 
-def splitData(data):
+def splitData(data: pd.DataFrame):
     x = data.drop('Outcome',axis=1)
     y = data['Outcome']
     x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.1,random_state=101)

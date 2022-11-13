@@ -5,3 +5,498 @@
 2022-11-13 16:08:48,808 - kedro.runner.sequential_runner - INFO - Completed 1 out of 1 tasks
 2022-11-13 16:08:48,811 - kedro.runner.sequential_runner - INFO - Pipeline execution completed successfully.
 2022-11-13 16:08:48,814 - kedro.io.data_catalog - INFO - Loading data from 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:19:15,149 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:19:16,911 - kedro.io.data_catalog - INFO - Loading data from 'diabetes' (CSVDataSet)...
+2022-11-13 18:19:16,932 - kedro.pipeline.node - INFO - Running node: preprocess_diabetes_node: preprocess_diabetes([diabetes]) -> [preprocessed_diabetes]
+2022-11-13 18:19:16,944 - kedro.io.data_catalog - INFO - Saving data to 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:19:16,947 - kedro.runner.sequential_runner - INFO - Completed 1 out of 1 tasks
+2022-11-13 18:19:16,952 - kedro.runner.sequential_runner - INFO - Pipeline execution completed successfully.
+2022-11-13 18:19:16,956 - kedro.io.data_catalog - INFO - Loading data from 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:26:18,433 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:26:18,462 - py.warnings - WARNING - C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py:359: UserWarning: An error occurred while importing the 'diabetes.pipelines.data_processing_diabetes' module. Nothing defined therein will be returned by 'find_pipelines'.
+
+Traceback (most recent call last):
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py", line 357, in find_pipelines
+    pipeline_module = importlib.import_module(pipeline_module_name)
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\__init__.py", line 6, in <module>
+    from .pipeline import create_pipeline
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\pipeline.py", line 8, in <module>
+    from .nodes import preprocess_diabetes
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\nodes.py", line 15
+    def splitData(data: pd.DataFrame) -> pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame:
+                                                     ^
+SyntaxError: expected ':'
+
+  warnings.warn(
+
+2022-11-13 18:26:49,078 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:26:49,099 - py.warnings - WARNING - C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py:359: UserWarning: An error occurred while importing the 'diabetes.pipelines.data_processing_diabetes' module. Nothing defined therein will be returned by 'find_pipelines'.
+
+Traceback (most recent call last):
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py", line 357, in find_pipelines
+    pipeline_module = importlib.import_module(pipeline_module_name)
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\__init__.py", line 6, in <module>
+    from .pipeline import create_pipeline
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\pipeline.py", line 8, in <module>
+    from .nodes import preprocess_diabetes
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\nodes.py", line 15
+    def splitData(data: pd.DataFrame) -> pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame:
+                                                     ^
+SyntaxError: expected ':'
+
+  warnings.warn(
+
+2022-11-13 18:28:21,589 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:28:52,184 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:29:11,377 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:29:11,922 - kedro.io.data_catalog - INFO - Loading data from 'diabetes' (CSVDataSet)...
+2022-11-13 18:29:11,927 - kedro.pipeline.node - INFO - Running node: preprocess_diabetes_node: preprocess_diabetes([diabetes]) -> [preprocessed_diabetes]
+2022-11-13 18:29:11,936 - kedro.io.data_catalog - INFO - Saving data to 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:29:11,943 - kedro.runner.sequential_runner - INFO - Completed 1 out of 2 tasks
+2022-11-13 18:29:11,947 - kedro.io.data_catalog - INFO - Loading data from 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:29:11,950 - kedro.pipeline.node - INFO - Running node: splitData([preprocessed_diabetes]) -> [splitted_data]
+2022-11-13 18:29:11,959 - kedro.pipeline.node - ERROR - Node 'splitData([preprocessed_diabetes]) -> [splitted_data]' failed with error: 
+name 'train_test_split' is not defined
+2022-11-13 18:29:11,965 - kedro.runner.sequential_runner - WARNING - There are 1 nodes that have not run.
+You can resume the pipeline run from the nearest nodes with persisted inputs by adding the following argument to your previous command:
+  --from-nodes "preprocess_diabetes_node"
+2022-11-13 18:30:08,690 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:30:09,324 - py.warnings - WARNING - C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py:359: UserWarning: An error occurred while importing the 'diabetes.pipelines.data_processing_diabetes' module. Nothing defined therein will be returned by 'find_pipelines'.
+
+Traceback (most recent call last):
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py", line 357, in find_pipelines
+    pipeline_module = importlib.import_module(pipeline_module_name)
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\__init__.py", line 6, in <module>
+    from .pipeline import create_pipeline
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\pipeline.py", line 8, in <module>
+    from .nodes import preprocess_diabetes, splitData
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\nodes.py", line 7, in <module>
+    import seaborn as sns
+ModuleNotFoundError: No module named 'seaborn'
+
+  warnings.warn(
+
+2022-11-13 18:30:51,836 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:30:52,897 - py.warnings - WARNING - C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py:359: UserWarning: An error occurred while importing the 'diabetes.pipelines.data_processing_diabetes' module. Nothing defined therein will be returned by 'find_pipelines'.
+
+Traceback (most recent call last):
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py", line 357, in find_pipelines
+    pipeline_module = importlib.import_module(pipeline_module_name)
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\__init__.py", line 6, in <module>
+    from .pipeline import create_pipeline
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\pipeline.py", line 8, in <module>
+    from .nodes import preprocess_diabetes, splitData
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\nodes.py", line 9, in <module>
+    from sklearn.model_selection import train_test_split
+ModuleNotFoundError: No module named 'sklearn'
+
+  warnings.warn(
+
+2022-11-13 18:32:56,888 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:32:57,763 - py.warnings - WARNING - C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py:359: UserWarning: An error occurred while importing the 'diabetes.pipelines.data_processing_diabetes' module. Nothing defined therein will be returned by 'find_pipelines'.
+
+Traceback (most recent call last):
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py", line 357, in find_pipelines
+    pipeline_module = importlib.import_module(pipeline_module_name)
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\__init__.py", line 6, in <module>
+    from .pipeline import create_pipeline
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\pipeline.py", line 8, in <module>
+    from .nodes import preprocess_diabetes, splitData
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\nodes.py", line 9, in <module>
+    from sklearn.model_selection import train_test_split
+ModuleNotFoundError: No module named 'sklearn'
+
+  warnings.warn(
+
+2022-11-13 18:36:00,862 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:36:01,792 - py.warnings - WARNING - C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py:359: UserWarning: An error occurred while importing the 'diabetes.pipelines.data_processing_diabetes' module. Nothing defined therein will be returned by 'find_pipelines'.
+
+Traceback (most recent call last):
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py", line 357, in find_pipelines
+    pipeline_module = importlib.import_module(pipeline_module_name)
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\__init__.py", line 6, in <module>
+    from .pipeline import create_pipeline
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\pipeline.py", line 8, in <module>
+    from .nodes import preprocess_diabetes, splitData
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\nodes.py", line 9, in <module>
+    from sklearn.model_selection import train_test_split
+ModuleNotFoundError: No module named 'sklearn'
+
+  warnings.warn(
+
+2022-11-13 18:37:23,164 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:37:25,099 - kedro.io.data_catalog - INFO - Loading data from 'diabetes' (CSVDataSet)...
+2022-11-13 18:37:25,104 - kedro.pipeline.node - INFO - Running node: preprocess_diabetes_node: preprocess_diabetes([diabetes]) -> [preprocessed_diabetes]
+2022-11-13 18:37:25,114 - kedro.io.data_catalog - INFO - Saving data to 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:37:25,119 - kedro.runner.sequential_runner - INFO - Completed 1 out of 2 tasks
+2022-11-13 18:37:25,122 - kedro.io.data_catalog - INFO - Loading data from 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:37:25,126 - kedro.pipeline.node - INFO - Running node: splitData([preprocessed_diabetes]) -> [splitted_data]
+2022-11-13 18:37:25,139 - kedro.io.data_catalog - INFO - Saving data to 'splitted_data' (MemoryDataSet)...
+2022-11-13 18:37:25,145 - kedro.runner.sequential_runner - INFO - Completed 2 out of 2 tasks
+2022-11-13 18:37:25,149 - kedro.runner.sequential_runner - INFO - Pipeline execution completed successfully.
+2022-11-13 18:37:25,153 - kedro.io.data_catalog - INFO - Loading data from 'splitted_data' (MemoryDataSet)...
+2022-11-13 18:42:52,692 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:43:14,662 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:43:29,015 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:43:30,722 - kedro.pipeline.node - INFO - Running node: createModel(None) -> [model]
+2022-11-13 18:43:30,725 - kedro.io.data_catalog - INFO - Saving data to 'model' (MemoryDataSet)...
+2022-11-13 18:43:30,727 - kedro.runner.sequential_runner - INFO - Completed 1 out of 3 tasks
+2022-11-13 18:43:30,731 - kedro.io.data_catalog - INFO - Loading data from 'diabetes' (CSVDataSet)...
+2022-11-13 18:43:30,738 - kedro.pipeline.node - INFO - Running node: preprocess_diabetes_node: preprocess_diabetes([diabetes]) -> [preprocessed_diabetes]
+2022-11-13 18:43:30,750 - kedro.io.data_catalog - INFO - Saving data to 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:43:30,754 - kedro.runner.sequential_runner - INFO - Completed 2 out of 3 tasks
+2022-11-13 18:43:30,759 - kedro.io.data_catalog - INFO - Loading data from 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:43:30,764 - kedro.pipeline.node - INFO - Running node: splitData([preprocessed_diabetes]) -> [splitted_data]
+2022-11-13 18:43:30,769 - kedro.io.data_catalog - INFO - Saving data to 'splitted_data' (MemoryDataSet)...
+2022-11-13 18:43:30,776 - kedro.runner.sequential_runner - INFO - Completed 3 out of 3 tasks
+2022-11-13 18:43:30,779 - kedro.runner.sequential_runner - INFO - Pipeline execution completed successfully.
+2022-11-13 18:43:30,782 - kedro.io.data_catalog - INFO - Loading data from 'splitted_data' (MemoryDataSet)...
+2022-11-13 18:43:30,786 - kedro.io.data_catalog - INFO - Loading data from 'model' (MemoryDataSet)...
+2022-11-13 18:50:40,162 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:50:41,854 - kedro.pipeline.node - INFO - Running node: createModel(None) -> [model]
+2022-11-13 18:50:41,861 - kedro.io.data_catalog - INFO - Saving data to 'model' (MemoryDataSet)...
+2022-11-13 18:50:41,865 - kedro.runner.sequential_runner - INFO - Completed 1 out of 4 tasks
+2022-11-13 18:50:41,868 - kedro.io.data_catalog - INFO - Loading data from 'diabetes' (CSVDataSet)...
+2022-11-13 18:50:41,876 - kedro.pipeline.node - INFO - Running node: preprocess_diabetes_node: preprocess_diabetes([diabetes]) -> [preprocessed_diabetes]
+2022-11-13 18:50:41,883 - kedro.io.data_catalog - INFO - Saving data to 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:50:41,889 - kedro.runner.sequential_runner - INFO - Completed 2 out of 4 tasks
+2022-11-13 18:50:41,894 - kedro.io.data_catalog - INFO - Loading data from 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:50:41,899 - kedro.pipeline.node - INFO - Running node: splitData([preprocessed_diabetes]) -> [X_train,X_test,y_train,y_test]
+2022-11-13 18:50:41,906 - kedro.io.data_catalog - INFO - Saving data to 'X_train' (MemoryDataSet)...
+2022-11-13 18:50:41,909 - kedro.io.data_catalog - INFO - Saving data to 'X_test' (MemoryDataSet)...
+2022-11-13 18:50:41,911 - kedro.io.data_catalog - INFO - Saving data to 'y_train' (MemoryDataSet)...
+2022-11-13 18:50:41,918 - kedro.io.data_catalog - INFO - Saving data to 'y_test' (MemoryDataSet)...
+2022-11-13 18:50:41,923 - kedro.runner.sequential_runner - INFO - Completed 3 out of 4 tasks
+2022-11-13 18:50:41,926 - kedro.io.data_catalog - INFO - Loading data from 'X_train' (MemoryDataSet)...
+2022-11-13 18:50:41,932 - kedro.pipeline.node - INFO - Running node: normalizeFeatures([X_train]) -> [X_train_normalized]
+2022-11-13 18:50:41,941 - kedro.io.data_catalog - INFO - Saving data to 'X_train_normalized' (MemoryDataSet)...
+2022-11-13 18:50:41,948 - kedro.runner.sequential_runner - INFO - Completed 4 out of 4 tasks
+2022-11-13 18:50:41,953 - kedro.runner.sequential_runner - INFO - Pipeline execution completed successfully.
+2022-11-13 18:50:41,957 - kedro.io.data_catalog - INFO - Loading data from 'y_test' (MemoryDataSet)...
+2022-11-13 18:50:41,960 - kedro.io.data_catalog - INFO - Loading data from 'model' (MemoryDataSet)...
+2022-11-13 18:50:41,966 - kedro.io.data_catalog - INFO - Loading data from 'X_test' (MemoryDataSet)...
+2022-11-13 18:50:41,969 - kedro.io.data_catalog - INFO - Loading data from 'X_train_normalized' (MemoryDataSet)...
+2022-11-13 18:50:41,973 - kedro.io.data_catalog - INFO - Loading data from 'y_train' (MemoryDataSet)...
+2022-11-13 18:52:22,084 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:52:22,106 - py.warnings - WARNING - C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py:359: UserWarning: An error occurred while importing the 'diabetes.pipelines.data_processing_diabetes' module. Nothing defined therein will be returned by 'find_pipelines'.
+
+Traceback (most recent call last):
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py", line 357, in find_pipelines
+    pipeline_module = importlib.import_module(pipeline_module_name)
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\__init__.py", line 6, in <module>
+    from .pipeline import create_pipeline
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\pipeline.py", line 39
+    ),
+    ^
+SyntaxError: positional argument follows keyword argument
+
+  warnings.warn(
+
+2022-11-13 18:52:43,486 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:52:43,517 - py.warnings - WARNING - C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py:359: UserWarning: An error occurred while importing the 'diabetes.pipelines.data_processing_diabetes' module. Nothing defined therein will be returned by 'find_pipelines'.
+
+Traceback (most recent call last):
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py", line 357, in find_pipelines
+    pipeline_module = importlib.import_module(pipeline_module_name)
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\__init__.py", line 6, in <module>
+    from .pipeline import create_pipeline
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\pipeline.py", line 39
+    ),
+    ^
+SyntaxError: positional argument follows keyword argument
+
+  warnings.warn(
+
+2022-11-13 18:53:08,142 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:53:08,160 - py.warnings - WARNING - C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py:359: UserWarning: An error occurred while importing the 'diabetes.pipelines.data_processing_diabetes' module. Nothing defined therein will be returned by 'find_pipelines'.
+
+Traceback (most recent call last):
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\site-packages\kedro\framework\project\__init__.py", line 357, in find_pipelines
+    pipeline_module = importlib.import_module(pipeline_module_name)
+  File "C:\Users\natal\AppData\Local\Programs\Python\Python310\lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\__init__.py", line 6, in <module>
+    from .pipeline import create_pipeline
+  File "C:\Users\natal\diabetes\src\diabetes\pipelines\data_processing_diabetes\pipeline.py", line 39
+    )
+    ^
+SyntaxError: positional argument follows keyword argument
+
+  warnings.warn(
+
+2022-11-13 18:53:30,505 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:53:32,315 - kedro.pipeline.node - INFO - Running node: createModel(None) -> [model]
+2022-11-13 18:53:32,326 - kedro.io.data_catalog - INFO - Saving data to 'model' (MemoryDataSet)...
+2022-11-13 18:53:32,329 - kedro.runner.sequential_runner - INFO - Completed 1 out of 5 tasks
+2022-11-13 18:53:32,332 - kedro.io.data_catalog - INFO - Loading data from 'diabetes' (CSVDataSet)...
+2022-11-13 18:53:32,344 - kedro.pipeline.node - INFO - Running node: preprocess_diabetes_node: preprocess_diabetes([diabetes]) -> [preprocessed_diabetes]
+2022-11-13 18:53:32,350 - kedro.io.data_catalog - INFO - Saving data to 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:53:32,357 - kedro.runner.sequential_runner - INFO - Completed 2 out of 5 tasks
+2022-11-13 18:53:32,360 - kedro.io.data_catalog - INFO - Loading data from 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:53:32,363 - kedro.pipeline.node - INFO - Running node: splitData([preprocessed_diabetes]) -> [X_train,X_test,y_train,y_test]
+2022-11-13 18:53:32,372 - kedro.io.data_catalog - INFO - Saving data to 'X_train' (MemoryDataSet)...
+2022-11-13 18:53:32,376 - kedro.io.data_catalog - INFO - Saving data to 'X_test' (MemoryDataSet)...
+2022-11-13 18:53:32,379 - kedro.io.data_catalog - INFO - Saving data to 'y_train' (MemoryDataSet)...
+2022-11-13 18:53:32,383 - kedro.io.data_catalog - INFO - Saving data to 'y_test' (MemoryDataSet)...
+2022-11-13 18:53:32,388 - kedro.runner.sequential_runner - INFO - Completed 3 out of 5 tasks
+2022-11-13 18:53:32,392 - kedro.io.data_catalog - INFO - Loading data from 'X_train' (MemoryDataSet)...
+2022-11-13 18:53:32,396 - kedro.pipeline.node - INFO - Running node: normalizeFeatures([X_train]) -> [X_train_normalized]
+2022-11-13 18:53:32,406 - kedro.io.data_catalog - INFO - Saving data to 'X_train_normalized' (MemoryDataSet)...
+2022-11-13 18:53:32,411 - kedro.runner.sequential_runner - INFO - Completed 4 out of 5 tasks
+2022-11-13 18:53:32,414 - kedro.io.data_catalog - INFO - Loading data from 'model' (MemoryDataSet)...
+2022-11-13 18:53:32,417 - kedro.io.data_catalog - INFO - Loading data from 'X_train_normalized' (MemoryDataSet)...
+2022-11-13 18:53:32,423 - kedro.io.data_catalog - INFO - Loading data from 'y_train' (MemoryDataSet)...
+2022-11-13 18:53:32,427 - kedro.pipeline.node - INFO - Running node: trainModel([model,X_train_normalized,y_train]) -> [trainedModel]
+2022-11-13 18:53:32,444 - kedro.io.data_catalog - INFO - Saving data to 'trainedModel' (MemoryDataSet)...
+2022-11-13 18:53:32,454 - kedro.runner.sequential_runner - INFO - Completed 5 out of 5 tasks
+2022-11-13 18:53:32,459 - kedro.runner.sequential_runner - INFO - Pipeline execution completed successfully.
+2022-11-13 18:53:32,463 - kedro.io.data_catalog - INFO - Loading data from 'y_test' (MemoryDataSet)...
+2022-11-13 18:53:32,466 - kedro.io.data_catalog - INFO - Loading data from 'trainedModel' (MemoryDataSet)...
+2022-11-13 18:53:32,472 - kedro.io.data_catalog - INFO - Loading data from 'X_test' (MemoryDataSet)...
+2022-11-13 18:55:33,407 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:55:35,238 - kedro.pipeline.node - INFO - Running node: createModel(None) -> [model]
+2022-11-13 18:55:35,243 - kedro.io.data_catalog - INFO - Saving data to 'model' (MemoryDataSet)...
+2022-11-13 18:55:35,247 - kedro.runner.sequential_runner - INFO - Completed 1 out of 7 tasks
+2022-11-13 18:55:35,250 - kedro.io.data_catalog - INFO - Loading data from 'diabetes' (CSVDataSet)...
+2022-11-13 18:55:35,257 - kedro.pipeline.node - INFO - Running node: preprocess_diabetes_node: preprocess_diabetes([diabetes]) -> [preprocessed_diabetes]
+2022-11-13 18:55:35,268 - kedro.io.data_catalog - INFO - Saving data to 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:55:35,272 - kedro.runner.sequential_runner - INFO - Completed 2 out of 7 tasks
+2022-11-13 18:55:35,274 - kedro.io.data_catalog - INFO - Loading data from 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:55:35,278 - kedro.pipeline.node - INFO - Running node: splitData([preprocessed_diabetes]) -> [X_train,X_test,y_train,y_test]
+2022-11-13 18:55:35,286 - kedro.io.data_catalog - INFO - Saving data to 'X_train' (MemoryDataSet)...
+2022-11-13 18:55:35,289 - kedro.io.data_catalog - INFO - Saving data to 'X_test' (MemoryDataSet)...
+2022-11-13 18:55:35,292 - kedro.io.data_catalog - INFO - Saving data to 'y_train' (MemoryDataSet)...
+2022-11-13 18:55:35,296 - kedro.io.data_catalog - INFO - Saving data to 'y_test' (MemoryDataSet)...
+2022-11-13 18:55:35,301 - kedro.runner.sequential_runner - INFO - Completed 3 out of 7 tasks
+2022-11-13 18:55:35,303 - kedro.io.data_catalog - INFO - Loading data from 'X_test' (MemoryDataSet)...
+2022-11-13 18:55:35,306 - kedro.pipeline.node - INFO - Running node: normalizeFeatures([X_test]) -> [X_test_normalized]
+2022-11-13 18:55:35,315 - kedro.io.data_catalog - INFO - Saving data to 'X_test_normalized' (MemoryDataSet)...
+2022-11-13 18:55:35,319 - kedro.runner.sequential_runner - INFO - Completed 4 out of 7 tasks
+2022-11-13 18:55:35,323 - kedro.io.data_catalog - INFO - Loading data from 'X_train' (MemoryDataSet)...
+2022-11-13 18:55:35,329 - kedro.pipeline.node - INFO - Running node: normalizeFeatures([X_train]) -> [X_train_normalized]
+2022-11-13 18:55:35,336 - kedro.io.data_catalog - INFO - Saving data to 'X_train_normalized' (MemoryDataSet)...
+2022-11-13 18:55:35,341 - kedro.runner.sequential_runner - INFO - Completed 5 out of 7 tasks
+2022-11-13 18:55:35,344 - kedro.io.data_catalog - INFO - Loading data from 'model' (MemoryDataSet)...
+2022-11-13 18:55:35,348 - kedro.io.data_catalog - INFO - Loading data from 'X_test_normalized' (MemoryDataSet)...
+2022-11-13 18:55:35,353 - kedro.io.data_catalog - INFO - Loading data from 'y_test' (MemoryDataSet)...
+2022-11-13 18:55:35,356 - kedro.pipeline.node - INFO - Running node: evaluateModel([model,X_test_normalized,y_test]) -> None
+2022-11-13 18:55:35,359 - kedro.pipeline.node - ERROR - Node 'evaluateModel([model,X_test_normalized,y_test]) -> None' failed with error: 
+This LogisticRegression instance is not fitted yet. Call 'fit' with appropriate arguments before using this estimator.
+2022-11-13 18:55:35,368 - kedro.runner.sequential_runner - WARNING - There are 2 nodes that have not run.
+You can resume the pipeline run from the nearest nodes with persisted inputs by adding the following argument to your previous command:
+  --from-nodes "createModel(None) -> [model],preprocess_diabetes_node"
+2022-11-13 18:56:24,796 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:56:26,500 - kedro.pipeline.node - INFO - Running node: createModel(None) -> [model]
+2022-11-13 18:56:26,511 - kedro.io.data_catalog - INFO - Saving data to 'model' (MemoryDataSet)...
+2022-11-13 18:56:26,516 - kedro.runner.sequential_runner - INFO - Completed 1 out of 7 tasks
+2022-11-13 18:56:26,521 - kedro.io.data_catalog - INFO - Loading data from 'diabetes' (CSVDataSet)...
+2022-11-13 18:56:26,531 - kedro.pipeline.node - INFO - Running node: preprocess_diabetes_node: preprocess_diabetes([diabetes]) -> [preprocessed_diabetes]
+2022-11-13 18:56:26,537 - kedro.io.data_catalog - INFO - Saving data to 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:56:26,542 - kedro.runner.sequential_runner - INFO - Completed 2 out of 7 tasks
+2022-11-13 18:56:26,546 - kedro.io.data_catalog - INFO - Loading data from 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:56:26,551 - kedro.pipeline.node - INFO - Running node: splitData([preprocessed_diabetes]) -> [X_train,X_test,y_train,y_test]
+2022-11-13 18:56:26,556 - kedro.io.data_catalog - INFO - Saving data to 'X_train' (MemoryDataSet)...
+2022-11-13 18:56:26,561 - kedro.io.data_catalog - INFO - Saving data to 'X_test' (MemoryDataSet)...
+2022-11-13 18:56:26,564 - kedro.io.data_catalog - INFO - Saving data to 'y_train' (MemoryDataSet)...
+2022-11-13 18:56:26,569 - kedro.io.data_catalog - INFO - Saving data to 'y_test' (MemoryDataSet)...
+2022-11-13 18:56:26,575 - kedro.runner.sequential_runner - INFO - Completed 3 out of 7 tasks
+2022-11-13 18:56:26,579 - kedro.io.data_catalog - INFO - Loading data from 'X_test' (MemoryDataSet)...
+2022-11-13 18:56:26,584 - kedro.pipeline.node - INFO - Running node: normalizeFeatures([X_test]) -> [X_test_normalized]
+2022-11-13 18:56:26,590 - kedro.io.data_catalog - INFO - Saving data to 'X_test_normalized' (MemoryDataSet)...
+2022-11-13 18:56:26,595 - kedro.runner.sequential_runner - INFO - Completed 4 out of 7 tasks
+2022-11-13 18:56:26,598 - kedro.io.data_catalog - INFO - Loading data from 'X_train' (MemoryDataSet)...
+2022-11-13 18:56:26,602 - kedro.pipeline.node - INFO - Running node: normalizeFeatures([X_train]) -> [X_train_normalized]
+2022-11-13 18:56:26,610 - kedro.io.data_catalog - INFO - Saving data to 'X_train_normalized' (MemoryDataSet)...
+2022-11-13 18:56:26,615 - kedro.runner.sequential_runner - INFO - Completed 5 out of 7 tasks
+2022-11-13 18:56:26,618 - kedro.io.data_catalog - INFO - Loading data from 'model' (MemoryDataSet)...
+2022-11-13 18:56:26,621 - kedro.io.data_catalog - INFO - Loading data from 'X_train_normalized' (MemoryDataSet)...
+2022-11-13 18:56:26,624 - kedro.io.data_catalog - INFO - Loading data from 'y_train' (MemoryDataSet)...
+2022-11-13 18:56:26,630 - kedro.pipeline.node - INFO - Running node: trainModel([model,X_train_normalized,y_train]) -> [trainedModel]
+2022-11-13 18:56:26,637 - kedro.io.data_catalog - INFO - Saving data to 'trainedModel' (MemoryDataSet)...
+2022-11-13 18:56:26,642 - kedro.runner.sequential_runner - INFO - Completed 6 out of 7 tasks
+2022-11-13 18:56:26,646 - kedro.io.data_catalog - INFO - Loading data from 'trainedModel' (MemoryDataSet)...
+2022-11-13 18:56:26,650 - kedro.io.data_catalog - INFO - Loading data from 'X_test_normalized' (MemoryDataSet)...
+2022-11-13 18:56:26,654 - kedro.io.data_catalog - INFO - Loading data from 'y_test' (MemoryDataSet)...
+2022-11-13 18:56:26,659 - kedro.pipeline.node - INFO - Running node: evaluateModel([trainedModel,X_test_normalized,y_test]) -> None
+2022-11-13 18:56:26,680 - kedro.pipeline.node - ERROR - Node 'evaluateModel([trainedModel,X_test_normalized,y_test]) -> None' failed with error: 
+Failed to save outputs of node evaluateModel([trainedModel,X_test_normalized,y_test]) -> None.
+The node definition contains a list of outputs [], whereas the node function returned a 'NoneType'.
+2022-11-13 18:56:26,692 - kedro.runner.sequential_runner - WARNING - There are 1 nodes that have not run.
+You can resume the pipeline run from the nearest nodes with persisted inputs by adding the following argument to your previous command:
+  --from-nodes "preprocess_diabetes_node,createModel(None) -> [model]"
+2022-11-13 18:57:00,050 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:58:07,462 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 18:58:09,306 - kedro.pipeline.node - INFO - Running node: createModel(None) -> [model]
+2022-11-13 18:58:09,316 - kedro.io.data_catalog - INFO - Saving data to 'model' (MemoryDataSet)...
+2022-11-13 18:58:09,319 - kedro.runner.sequential_runner - INFO - Completed 1 out of 7 tasks
+2022-11-13 18:58:09,322 - kedro.io.data_catalog - INFO - Loading data from 'diabetes' (CSVDataSet)...
+2022-11-13 18:58:09,332 - kedro.pipeline.node - INFO - Running node: preprocess_diabetes_node: preprocess_diabetes([diabetes]) -> [preprocessed_diabetes]
+2022-11-13 18:58:09,341 - kedro.io.data_catalog - INFO - Saving data to 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:58:09,345 - kedro.runner.sequential_runner - INFO - Completed 2 out of 7 tasks
+2022-11-13 18:58:09,348 - kedro.io.data_catalog - INFO - Loading data from 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 18:58:09,352 - kedro.pipeline.node - INFO - Running node: splitData([preprocessed_diabetes]) -> [X_train,X_test,y_train,y_test]
+2022-11-13 18:58:09,360 - kedro.io.data_catalog - INFO - Saving data to 'X_train' (MemoryDataSet)...
+2022-11-13 18:58:09,363 - kedro.io.data_catalog - INFO - Saving data to 'X_test' (MemoryDataSet)...
+2022-11-13 18:58:09,366 - kedro.io.data_catalog - INFO - Saving data to 'y_train' (MemoryDataSet)...
+2022-11-13 18:58:09,370 - kedro.io.data_catalog - INFO - Saving data to 'y_test' (MemoryDataSet)...
+2022-11-13 18:58:09,375 - kedro.runner.sequential_runner - INFO - Completed 3 out of 7 tasks
+2022-11-13 18:58:09,379 - kedro.io.data_catalog - INFO - Loading data from 'X_test' (MemoryDataSet)...
+2022-11-13 18:58:09,382 - kedro.pipeline.node - INFO - Running node: normalizeFeatures([X_test]) -> [X_test_normalized]
+2022-11-13 18:58:09,391 - kedro.io.data_catalog - INFO - Saving data to 'X_test_normalized' (MemoryDataSet)...
+2022-11-13 18:58:09,396 - kedro.runner.sequential_runner - INFO - Completed 4 out of 7 tasks
+2022-11-13 18:58:09,398 - kedro.io.data_catalog - INFO - Loading data from 'X_train' (MemoryDataSet)...
+2022-11-13 18:58:09,405 - kedro.pipeline.node - INFO - Running node: normalizeFeatures([X_train]) -> [X_train_normalized]
+2022-11-13 18:58:09,412 - kedro.io.data_catalog - INFO - Saving data to 'X_train_normalized' (MemoryDataSet)...
+2022-11-13 18:58:09,416 - kedro.runner.sequential_runner - INFO - Completed 5 out of 7 tasks
+2022-11-13 18:58:09,423 - kedro.io.data_catalog - INFO - Loading data from 'model' (MemoryDataSet)...
+2022-11-13 18:58:09,427 - kedro.io.data_catalog - INFO - Loading data from 'X_train_normalized' (MemoryDataSet)...
+2022-11-13 18:58:09,429 - kedro.io.data_catalog - INFO - Loading data from 'y_train' (MemoryDataSet)...
+2022-11-13 18:58:09,433 - kedro.pipeline.node - INFO - Running node: trainModel([model,X_train_normalized,y_train]) -> [trainedModel]
+2022-11-13 18:58:09,441 - kedro.io.data_catalog - INFO - Saving data to 'trainedModel' (MemoryDataSet)...
+2022-11-13 18:58:09,445 - kedro.runner.sequential_runner - INFO - Completed 6 out of 7 tasks
+2022-11-13 18:58:09,448 - kedro.io.data_catalog - INFO - Loading data from 'trainedModel' (MemoryDataSet)...
+2022-11-13 18:58:09,452 - kedro.io.data_catalog - INFO - Loading data from 'X_test_normalized' (MemoryDataSet)...
+2022-11-13 18:58:09,455 - kedro.io.data_catalog - INFO - Loading data from 'y_test' (MemoryDataSet)...
+2022-11-13 18:58:09,459 - kedro.pipeline.node - INFO - Running node: evaluateModel([trainedModel,X_test_normalized,y_test]) -> None
+2022-11-13 18:58:09,471 - kedro.runner.sequential_runner - INFO - Completed 7 out of 7 tasks
+2022-11-13 18:58:09,476 - kedro.runner.sequential_runner - INFO - Pipeline execution completed successfully.
+2022-11-13 19:01:38,035 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 19:01:39,830 - kedro.pipeline.node - INFO - Running node: createModel(None) -> [model]
+2022-11-13 19:01:39,842 - kedro.io.data_catalog - INFO - Saving data to 'model' (MemoryDataSet)...
+2022-11-13 19:01:39,845 - kedro.runner.sequential_runner - INFO - Completed 1 out of 7 tasks
+2022-11-13 19:01:39,848 - kedro.io.data_catalog - INFO - Loading data from 'diabetes' (CSVDataSet)...
+2022-11-13 19:01:39,858 - kedro.pipeline.node - INFO - Running node: preprocess_diabetes_node: preprocess_diabetes([diabetes]) -> [preprocessed_diabetes]
+2022-11-13 19:01:39,864 - kedro.io.data_catalog - INFO - Saving data to 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 19:01:39,869 - kedro.runner.sequential_runner - INFO - Completed 2 out of 7 tasks
+2022-11-13 19:01:39,872 - kedro.io.data_catalog - INFO - Loading data from 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 19:01:39,876 - kedro.pipeline.node - INFO - Running node: splitData([preprocessed_diabetes]) -> [X_train,X_test,y_train,y_test]
+2022-11-13 19:01:39,883 - kedro.io.data_catalog - INFO - Saving data to 'X_train' (MemoryDataSet)...
+2022-11-13 19:01:39,886 - kedro.io.data_catalog - INFO - Saving data to 'X_test' (MemoryDataSet)...
+2022-11-13 19:01:39,890 - kedro.io.data_catalog - INFO - Saving data to 'y_train' (MemoryDataSet)...
+2022-11-13 19:01:39,895 - kedro.io.data_catalog - INFO - Saving data to 'y_test' (MemoryDataSet)...
+2022-11-13 19:01:39,899 - kedro.runner.sequential_runner - INFO - Completed 3 out of 7 tasks
+2022-11-13 19:01:39,902 - kedro.io.data_catalog - INFO - Loading data from 'X_test' (MemoryDataSet)...
+2022-11-13 19:01:39,905 - kedro.pipeline.node - INFO - Running node: normalizeFeatures([X_test]) -> [X_test_normalized]
+2022-11-13 19:01:39,912 - kedro.io.data_catalog - INFO - Saving data to 'X_test_normalized' (MemoryDataSet)...
+2022-11-13 19:01:39,917 - kedro.runner.sequential_runner - INFO - Completed 4 out of 7 tasks
+2022-11-13 19:01:39,920 - kedro.io.data_catalog - INFO - Loading data from 'X_train' (MemoryDataSet)...
+2022-11-13 19:01:39,923 - kedro.pipeline.node - INFO - Running node: normalizeFeatures([X_train]) -> [X_train_normalized]
+2022-11-13 19:01:39,931 - kedro.io.data_catalog - INFO - Saving data to 'X_train_normalized' (MemoryDataSet)...
+2022-11-13 19:01:39,935 - kedro.runner.sequential_runner - INFO - Completed 5 out of 7 tasks
+2022-11-13 19:01:39,937 - kedro.io.data_catalog - INFO - Loading data from 'model' (MemoryDataSet)...
+2022-11-13 19:01:39,942 - kedro.io.data_catalog - INFO - Loading data from 'X_train_normalized' (MemoryDataSet)...
+2022-11-13 19:01:39,946 - kedro.io.data_catalog - INFO - Loading data from 'y_train' (MemoryDataSet)...
+2022-11-13 19:01:39,950 - kedro.pipeline.node - INFO - Running node: trainModel([model,X_train_normalized,y_train]) -> [trainedModel]
+2022-11-13 19:01:39,956 - kedro.io.data_catalog - INFO - Saving data to 'trainedModel' (MemoryDataSet)...
+2022-11-13 19:01:39,961 - kedro.runner.sequential_runner - INFO - Completed 6 out of 7 tasks
+2022-11-13 19:01:39,965 - kedro.io.data_catalog - INFO - Loading data from 'trainedModel' (MemoryDataSet)...
+2022-11-13 19:01:39,968 - kedro.io.data_catalog - INFO - Loading data from 'X_test_normalized' (MemoryDataSet)...
+2022-11-13 19:01:39,970 - kedro.io.data_catalog - INFO - Loading data from 'y_test' (MemoryDataSet)...
+2022-11-13 19:01:39,975 - kedro.pipeline.node - INFO - Running node: evaluateModel([trainedModel,X_test_normalized,y_test]) -> None
+2022-11-13 19:01:39,987 - kedro.runner.sequential_runner - INFO - Completed 7 out of 7 tasks
+2022-11-13 19:01:39,991 - kedro.runner.sequential_runner - INFO - Pipeline execution completed successfully.
+2022-11-13 19:01:49,557 - kedro.framework.session.session - INFO - Kedro project diabetes
+2022-11-13 19:01:51,241 - kedro.pipeline.node - INFO - Running node: createModel(None) -> [model]
+2022-11-13 19:01:51,246 - kedro.io.data_catalog - INFO - Saving data to 'model' (MemoryDataSet)...
+2022-11-13 19:01:51,249 - kedro.runner.sequential_runner - INFO - Completed 1 out of 7 tasks
+2022-11-13 19:01:51,252 - kedro.io.data_catalog - INFO - Loading data from 'diabetes' (CSVDataSet)...
+2022-11-13 19:01:51,263 - kedro.pipeline.node - INFO - Running node: preprocess_diabetes_node: preprocess_diabetes([diabetes]) -> [preprocessed_diabetes]
+2022-11-13 19:01:51,268 - kedro.io.data_catalog - INFO - Saving data to 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 19:01:51,275 - kedro.runner.sequential_runner - INFO - Completed 2 out of 7 tasks
+2022-11-13 19:01:51,280 - kedro.io.data_catalog - INFO - Loading data from 'preprocessed_diabetes' (MemoryDataSet)...
+2022-11-13 19:01:51,283 - kedro.pipeline.node - INFO - Running node: splitData([preprocessed_diabetes]) -> [X_train,X_test,y_train,y_test]
+2022-11-13 19:01:51,288 - kedro.io.data_catalog - INFO - Saving data to 'X_train' (MemoryDataSet)...
+2022-11-13 19:01:51,292 - kedro.io.data_catalog - INFO - Saving data to 'X_test' (MemoryDataSet)...
+2022-11-13 19:01:51,297 - kedro.io.data_catalog - INFO - Saving data to 'y_train' (MemoryDataSet)...
+2022-11-13 19:01:51,301 - kedro.io.data_catalog - INFO - Saving data to 'y_test' (MemoryDataSet)...
+2022-11-13 19:01:51,303 - kedro.runner.sequential_runner - INFO - Completed 3 out of 7 tasks
+2022-11-13 19:01:51,307 - kedro.io.data_catalog - INFO - Loading data from 'X_test' (MemoryDataSet)...
+2022-11-13 19:01:51,313 - kedro.pipeline.node - INFO - Running node: normalizeFeatures([X_test]) -> [X_test_normalized]
+2022-11-13 19:01:51,318 - kedro.io.data_catalog - INFO - Saving data to 'X_test_normalized' (MemoryDataSet)...
+2022-11-13 19:01:51,322 - kedro.runner.sequential_runner - INFO - Completed 4 out of 7 tasks
+2022-11-13 19:01:51,326 - kedro.io.data_catalog - INFO - Loading data from 'X_train' (MemoryDataSet)...
+2022-11-13 19:01:51,331 - kedro.pipeline.node - INFO - Running node: normalizeFeatures([X_train]) -> [X_train_normalized]
+2022-11-13 19:01:51,337 - kedro.io.data_catalog - INFO - Saving data to 'X_train_normalized' (MemoryDataSet)...
+2022-11-13 19:01:51,343 - kedro.runner.sequential_runner - INFO - Completed 5 out of 7 tasks
+2022-11-13 19:01:51,347 - kedro.io.data_catalog - INFO - Loading data from 'model' (MemoryDataSet)...
+2022-11-13 19:01:51,350 - kedro.io.data_catalog - INFO - Loading data from 'X_train_normalized' (MemoryDataSet)...
+2022-11-13 19:01:51,352 - kedro.io.data_catalog - INFO - Loading data from 'y_train' (MemoryDataSet)...
+2022-11-13 19:01:51,357 - kedro.pipeline.node - INFO - Running node: trainModel([model,X_train_normalized,y_train]) -> [trainedModel]
+2022-11-13 19:01:51,363 - kedro.io.data_catalog - INFO - Saving data to 'trainedModel' (MemoryDataSet)...
+2022-11-13 19:01:51,369 - kedro.runner.sequential_runner - INFO - Completed 6 out of 7 tasks
+2022-11-13 19:01:51,374 - kedro.io.data_catalog - INFO - Loading data from 'trainedModel' (MemoryDataSet)...
+2022-11-13 19:01:51,378 - kedro.io.data_catalog - INFO - Loading data from 'X_test_normalized' (MemoryDataSet)...
+2022-11-13 19:01:51,381 - kedro.io.data_catalog - INFO - Loading data from 'y_test' (MemoryDataSet)...
+2022-11-13 19:01:51,385 - kedro.pipeline.node - INFO - Running node: evaluateModel([trainedModel,X_test_normalized,y_test]) -> None
+2022-11-13 19:01:51,399 - kedro.runner.sequential_runner - INFO - Completed 7 out of 7 tasks
+2022-11-13 19:01:51,401 - kedro.runner.sequential_runner - INFO - Pipeline execution completed successfully.
