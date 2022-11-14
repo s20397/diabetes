@@ -7,3 +7,8 @@
 diabetes:
   type: pandas.CSVDataSet
   filepath: data/01_raw/diabetes.csv
+  
+trainedModel:
+  type: pickle.PickleDataSet
+  filepath: data/06_models/trained_model.pkl
+  versioned: true

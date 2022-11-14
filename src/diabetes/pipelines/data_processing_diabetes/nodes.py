@@ -2,6 +2,7 @@
 This is a boilerplate pipeline 'data_processing_diabetes'
 generated using Kedro 0.18.3
 """
+from typing import Any, Dict
 import numpy as np 
 import pandas as pd 
 import seaborn as sns
@@ -20,22 +21,22 @@ def preprocess_diabetes(diabetes: pd.DataFrame):
     diabetes['BMI'] = diabetes['BMI'].replace(0,diabetes['BMI'].mean())
     return diabetes
 
-def splitData(data: pd.DataFrame):
-    x = data.drop('Outcome',axis=1)
-    y = data['Outcome']
-    x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.1,random_state=101)
+def split_data(data: pd.DataFrame, parameters: Dict[str, Any]):
+    x = data.drop(columns='Outcome')
+    y = data.loc[:,'Outcome']
+    x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.1,random_state=parameters.get('seed'))
     return x_train,x_test,y_train,y_test
 
-def createModel():
+def create_model():
     model = LogisticRegression()
     return model
 
-def normalizeFeatures(data):
+def normalize_features(data):
     sc = StandardScaler()
     data = sc.fit_transform(data)
     return data
 
-def trainModel(model, x_train, y_train):
+def train_model(model, x_train, y_train):
     model.fit(x_train,y_train)
     return model
 
@@ -43,15 +44,15 @@ def predict(model, x_test):
     predictions = model.predict(x_test)
     return predictions
 
-def getClassificationReport(predictions, y_test):
+def get_classification_report(predictions, y_test):
     report = classification_report(y_test,predictions)
     return report
 
-def getConfussionMatrix(predictions, y_test):
+def get_confussion_matrix(predictions, y_test):
     matrix = confusion_matrix(y_test,predictions)
     return matrix
 
-def evaluateModel(model, x_test, y_test):
+def evaluate_model(model, x_test, y_test):
     predictions = predict(model, x_test)
     print(getClassificationReport(predictions, y_test))
     print("confussion matrix:")
