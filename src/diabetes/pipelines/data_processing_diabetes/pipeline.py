@@ -19,7 +19,7 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
             node(
                 func=create_model,
-                inputs="preprocessed_diabetes",
+                inputs=[],
                 outputs="model_created"
             ),
             node(
