@@ -5,7 +5,7 @@ generated using Kedro 0.18.3
 
 from kedro.pipeline import Pipeline, node, pipeline
 
-from .nodes import preprocess_diabetes, split_data, create_model, normalize_features, train_model, evaluate_model
+from .nodes import preprocess_diabetes, split_data, create_model, normalize_features, train_model, evaluate_model, get_score
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -34,7 +34,7 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
             node(
                 func=train_model,
-                inputs=["model","X_train_normalized","y_train"],
+                inputs=["model_created","X_train_normalized","y_train"],
                 outputs="model_trained"
             ),
             node(
@@ -44,7 +44,7 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
             node(
                 func=evaluate_model,
-                inputs=["trainedModel","X_test_normalized","y_test"],
+                inputs=["model_trained","X_test_normalized","y_test"],
                 outputs=None
             )
         ]

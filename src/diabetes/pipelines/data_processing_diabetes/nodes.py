@@ -12,6 +12,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from sklearn.preprocessing import StandardScaler
+import wandb
+from sklearn.metrics import accuracy_score
 
 def preprocess_diabetes(diabetes: pd.DataFrame):
     diabetes['Glucose'] = diabetes['Glucose'].replace(0,diabetes['Glucose'].mean())
@@ -54,6 +56,11 @@ def get_confussion_matrix(predictions, y_test):
 
 def evaluate_model(model, x_test, y_test):
     predictions = predict(model, x_test)
-    print(getClassificationReport(predictions, y_test))
+    print(get_classification_report(predictions, y_test))
     print("confussion matrix:")
-    print(getConfussionMatrix(predictions, y_test))
+    print(get_confussion_matrix(predictions, y_test))
+
+def get_score(model, x_test, y_test):
+    y_pred = model.predict(x_test)
+    score = accuracy_score(y_test,y_pred)
+    wandb.log({"learn_rate": score})
