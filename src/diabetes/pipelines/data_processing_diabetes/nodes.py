@@ -14,6 +14,8 @@ from sklearn.metrics import confusion_matrix
 from sklearn.preprocessing import StandardScaler
 import wandb
 from sklearn.metrics import accuracy_score
+from pycaret.datasets import get_data
+from pycaret.classification import setup
 
 def preprocess_diabetes(diabetes: pd.DataFrame):
     diabetes['Glucose'] = diabetes['Glucose'].replace(0,diabetes['Glucose'].mean())
@@ -29,9 +31,10 @@ def split_data(data: pd.DataFrame, parameters: Dict[str, Any]):
     x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.1,random_state=parameters.get('seed'))
     return x_train,x_test,y_train,y_test
 
-def create_model():
-    model = LogisticRegression()
-    return model
+def create_model(df: pd.DataFrame):
+    model_setup = setup(data=df, target="Outcome")
+    best_model = model_setup.compare_models()
+    return best_model
 
 def normalize_features(data):
     sc = StandardScaler()

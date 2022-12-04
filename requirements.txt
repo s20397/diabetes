@@ -14,3 +14,4 @@ dvc
 wandb
 seaborn
 scikit-learn
+pycaret

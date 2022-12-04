@@ -18,14 +18,14 @@ def create_pipeline(**kwargs) -> Pipeline:
                 name="preprocess_diabetes_node",
             ),
             node(
+                func=create_model,
+                inputs="preprocessed_diabetes",
+                outputs="model_created"
+            ),
+            node(
                 func=split_data,
                 inputs=["preprocessed_diabetes", "parameters"],
                 outputs=["X_train", "X_test", "y_train", "y_test"]
-            ),
-            node(
-                func=create_model,
-                inputs=[],
-                outputs="model_created"
             ),
             node(
                 func=normalize_features,
