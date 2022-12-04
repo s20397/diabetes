@@ -44,7 +44,7 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
             node(
                 func=evaluate_model,
-                inputs=["model_trained","X_test_normalized","y_test"],
+                inputs=["model_trained","X_test_normalized","y_test","X_train", "y_train"],
                 outputs=None
             )
         ]
