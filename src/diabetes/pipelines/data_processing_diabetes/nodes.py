@@ -15,6 +15,10 @@ from sklearn.preprocessing import StandardScaler
 import wandb
 from sklearn.metrics import accuracy_score, roc_auc_score
 import yaml
+import optuna
+from sklearn import linear_model
+
+from sklearn import model_selection
 
 def preprocess_diabetes(diabetes: pd.DataFrame):
     diabetes['Glucose'] = diabetes['Glucose'].replace(0,diabetes['Glucose'].mean())
@@ -39,7 +43,24 @@ def normalize_features(data):
     data = sc.fit_transform(data)
     return data
 
+# def train_model(model, x_train, y_train):
+#     model.fit(x_train,y_train)
+#     return model
+
 def train_model(model, x_train, y_train):
+    pd.options.mode.chained_assignment = None
+    def objective(trial):
+        # Step 1. Setup values for the hyperparameters:
+        logreg_c = trial.suggest_float("logreg_c", 1e-10, 1e10, log=True)
+        classifier_obj = linear_model.LogisticRegression(C=logreg_c)
+        # Step 2: Scoring method:
+        score = model_selection.cross_val_score(classifier_obj, x_train, y_train, n_jobs=-1, cv=3)
+        accuracy = score.mean()
+        return accuracy
+
+    study = optuna.create_study(direction='maximize')
+    study.optimize(objective, n_trials=100)
+    #model = LogisticRegression(**study.best_params)
     model.fit(x_train,y_train)
     return model
 
