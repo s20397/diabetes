@@ -17,6 +17,8 @@ from sklearn.metrics import accuracy_score, roc_auc_score
 import yaml
 import optuna
 from sklearn import linear_model
+from pycaret.datasets import get_data
+from pycaret.classification import setup
 
 from sklearn import model_selection
 
@@ -34,7 +36,12 @@ def split_data(data: pd.DataFrame, parameters: Dict[str, Any]):
     x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.1,random_state=parameters.get('seed'))
     return x_train,x_test,y_train,y_test
 
-def create_model():
+def create_best_model(df: pd.DataFrame):
+    model_setup = setup(data=df, target="Outcome")
+    best_model = model_setup.compare_models()
+    return best_model
+
+def create_lr_model():
     model = LogisticRegression()
     return model
 

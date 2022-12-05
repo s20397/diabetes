@@ -5,7 +5,7 @@ generated using Kedro 0.18.3
 
 from kedro.pipeline import Pipeline, node, pipeline
 
-from .nodes import preprocess_diabetes, split_data, create_model, normalize_features, train_model, evaluate_model, get_score
+from .nodes import preprocess_diabetes, split_data, create_lr_model, normalize_features, train_model, evaluate_model, get_score, create_best_model
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -18,7 +18,12 @@ def create_pipeline(**kwargs) -> Pipeline:
                 name="preprocess_diabetes_node",
             ),
             node(
-                func=create_model,
+                func=create_best_model,
+                inputs="preprocessed_diabetes",
+                outputs="best_model_created"
+            ),
+            node(
+                func=create_lr_model,
                 inputs=[],
                 outputs="model_created"
             ),
