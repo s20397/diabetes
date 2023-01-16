@@ -1,0 +1,10 @@
+---
+version: "3.9"
+services:
+  &service diabetes:
+    image: *service
+    build:
+      context: diabetes
+    container_name: diabetes
+    hostname: *service
+    restart: always
