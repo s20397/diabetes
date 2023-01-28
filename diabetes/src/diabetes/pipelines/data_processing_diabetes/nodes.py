@@ -93,7 +93,10 @@ def evaluate_model(model, x_test, y_test,x_train, y_train):
     
     # evaluate the model
     accuracy = accuracy_score(y_test, y_pred)
-    roc_auc = roc_auc_score(y_test, y_probas)
+    try:
+        roc_auc = roc_auc_score(y_test, y_probas)
+    except ValueError:
+        roc_auc = 0
         
     n_estimators = {'min' : 25, 'max' : 200} 
     max_depth = {'min' : 3, 'max' : 10} 
@@ -110,6 +113,8 @@ def evaluate_model(model, x_test, y_test,x_train, y_train):
     predictions = predict(model, x_test)
     wandb.log({"classification_report": get_classification_report(predictions, y_test)})
     #wandb.log({"confussion matrix:": get_confussion_matrix(predictions, y_test)})
+
+    return n_estimators, max_depth, accuracy, roc_auc
 
 def get_score(model, x_test, y_test):
     y_pred = model.predict(x_test)
