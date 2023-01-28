@@ -6,6 +6,6 @@ RUN apk add py3-pip
 
 COPY . /diabetes
 WORKDIR /diabetes
-RUN pip install -r requirements.txt
 
-RUN kedro run
+RUN pip install -r src/requirements.txt
+ENTRYPOINT ["uvicorn", "src/diabetes/api:app"]
